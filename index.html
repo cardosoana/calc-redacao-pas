@@ -1,0 +1,41 @@
+<html lang="pt">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Calculadora de Redação PAS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <script type="text/javascript" src="index.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <section class="calculator">
+        <div class="input-container">
+          <label for="nc"><b>NC</b> - Nota conteúdo - Apresentação do texto e Desenvolvimento do Tema </label>
+          <input type="number" id="nc" name="nc" value="0" onchange="validateNC(this.value)">
+          <label class="validation" id="nc-validation"></label>
+        </div>
+        
+        <div class="input-container">
+          <label for="ne"><b>NE</b> - Numero de Erros Microestruturais</label>
+          <input type="number" id="ne" name="ne" value="0" onchange="validateNE(this.value)">
+          <label class="validation" id="ne-validation"></label>
+        </div>
+
+        <div class="input-container">
+          <label for="tl"><b>TL</b> - Total de linhas</label>
+          <input type="number" id="tl" name="tl" value="0" onchange="validateTL(this.value)">
+          <label class="validation" id="tl-validation"></label>
+        </div>
+      </section>
+      <button type="button" id="calculate-button" onclick="calculateResult()">Calcular</button>
+
+      <input type="number" id="result" value="" disabled/>
+
+      <button id="copy-button" onclick="copyResult()">
+        <span id="copy-icon" class="material-icons">content_copy</span>
+      </button>
+    </div>
+  </body>
+</html>

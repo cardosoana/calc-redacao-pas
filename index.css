@@ -5,10 +5,11 @@ body {
   align-items: center;
   font-family: "Lato", Verdana, Tahoma, sans-serif;
   font-size: 16pt;
+  margin: 0;
 }
 
 input {
-  margin: 0.8rem;
+  margin: 0.8rem 0 0.1rem 0;
   height: 30px;
   font-size: 14pt;
 }
@@ -19,9 +20,11 @@ label {
 }
 
 .validation {
-  color: #f15b47;
-  height: 25px;
-  font-size: 12pt;
+  /* color: #f15b47; */
+  height: 20px;
+  color: gray;
+  font-size: 11pt;
+  margin-bottom: 0.8rem;
 }
 
 .container {
@@ -75,3 +78,15 @@ label {
   cursor: pointer;
 }
 
+@media only screen and (max-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .container {
+    width: 70%;
+  }
+}

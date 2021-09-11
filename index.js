@@ -1,7 +1,10 @@
-const NC_VALIDATION_MESSAGE = "NC deve ser menor ou igual a 10"
-const NE_VALIDATION_MESSAGE = "NE é um campo obrigatório"
-const TL_VALIDATION_MESSAGE = "TL deve ser menor ou igual a 30"
-const CALCULATE_BUTTON_VALIDATION_MESSAGE = "TL deve ser menor ou igual a 30"
+const VALID_NC_MESSAGE = "NC deve ser menor ou igual a 10"
+const VALID_NE_MESSAGE = ""
+const VALID_TL_MESSAGE = "TL deve ser menor ou igual a 30"
+
+const INVALID_NC_MESSAGE = "NC deve ser menor ou igual a 10"
+const INVALID_NE_MESSAGE = "NE é um campo obrigatório"
+const INVALID_TL_MESSAGE = "TL deve ser menor ou igual a 30"
 
 function calculateResult() {
   if(validateInputs()) {
@@ -57,27 +60,30 @@ function validateInputs() {
 
 function validateNC(value) {
   const isValid = !value || value > 10
-  return handleValidationResult(isValid, "nc-validation", NC_VALIDATION_MESSAGE)
+  return handleValidationResult(isValid, "nc-validation", VALID_NC_MESSAGE, INVALID_NC_MESSAGE)
 }
 
 function validateNE(value) {
   const isValid = !value
-  return handleValidationResult(isValid, "ne-validation", NE_VALIDATION_MESSAGE)
+  return handleValidationResult(isValid, "ne-validation", VALID_NE_MESSAGE, INVALID_NE_MESSAGE)
 }
 
 function validateTL(value) {
   const isValid = !value || value > 30
-  return handleValidationResult(isValid, "tl-validation", TL_VALIDATION_MESSAGE)
+  return handleValidationResult(isValid, "tl-validation", VALID_TL_MESSAGE, INVALID_TL_MESSAGE)
 }
 
-function handleValidationResult(isValid, labelId, message) {
+function handleValidationResult(notValid, labelId, valid_message, invalid_message) {
   let validationLabel = document.getElementById(labelId)
 
-  if(isValid){
-    validationLabel.innerHTML = message;
+  if(notValid){
+    validationLabel.innerHTML = invalid_message;
+    validationLabel.style.color =  "#f15b47";
+
     return false
   }
   
-  validationLabel.innerHTML = "";
+  validationLabel.innerHTML = valid_message;
+  validationLabel.style.color = "grey";
   return true
 }

@@ -14,7 +14,7 @@
         <div class="input-container">
           <label for="nc"><b>NC</b> - Nota conteúdo - Apresentação do texto e Desenvolvimento do Tema </label>
           <input type="number" id="nc" name="nc" value="0" onchange="validateNC(this.value)">
-          <label class="validation" id="nc-validation"></label>
+          <label class="validation" id="nc-validation">NC deve ser menor ou igual a 10</label>
         </div>
         
         <div class="input-container">
@@ -26,7 +26,7 @@
         <div class="input-container">
           <label for="tl"><b>TL</b> - Total de linhas</label>
           <input type="number" id="tl" name="tl" value="0" onchange="validateTL(this.value)">
-          <label class="validation" id="tl-validation"></label>
+          <label class="validation" id="tl-validation">TL deve ser menor ou igual a 30</label>
         </div>
       </section>
       <button type="button" id="calculate-button" onclick="calculateResult()">Calcular</button>
